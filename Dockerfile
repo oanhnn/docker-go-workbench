@@ -19,11 +19,14 @@ RUN apk add --update --no-cache \
 
 RUN git clone  -b $PROTOBUF_TAG --depth 1 https://github.com/protocolbuffers/protobuf.git /tmp/protobuf \
  && cd /tmp/protobuf \
+ && git submodule update --init --recursive \
  && ./autogen.sh \
  && ./configure --prefix=/usr \
  && make -j 3 \
  && make check \
  && make install \
+ && ldconfig \
+ && cd / \
  && rm -rf /tmp/protobuf
 
 RUN go get -u -v github.com/golang/protobuf/proto \
