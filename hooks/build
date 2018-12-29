@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo "=> Building the image $IMAGE_NAME"
+export BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
+       BUILD_VERSION=$GO_VERSION \
+       VCS_REF=`git rev-parse --short HEAD`
+
+docker pull $IMAGE_NAME || true
+docker build --build-arg GO_VERSION=$GO_VERSION
+             --cache-from $IMAGE_NAME \
+             --compress \
+             --label "org.label-schema.build-date=$BUILD_DATE" \
+             --label "org.label-schema.name='The Go image'" \
+             --label "org.label-schema.description='The image for Golang development environment'" \
+             --label "org.label-schema.url='https://github.com/oanhnn/docker-golang-dev'" \
+             --label "org.label-schema.vcs-url='https://github.com/oanhnn/docker-golang-dev.git'" \
+             --label "org.label-schema.vcs-ref=$VCS_REF" \
+             --label "org.label-schema.version=$BUILD_VERSION" \
+             --label "org.label-schema.schema-version=1.0" \
+             --pull \
+             --tag $IMAGE_NAME .

@@ -1,0 +1,15 @@
+services:
+  - docker
+
+env:
+  global:
+    - DOCKER_REPO="oanhnn/golang"
+  matrix:
+    - GO_VERSION="1.11"
+
+before_script:
+  - docker info
+  - export IMAGE_NAME="oanhnn/golang:${GO_VERSION}-dev"
+
+script:
+  - ./hooks/build
