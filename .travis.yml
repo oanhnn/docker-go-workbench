@@ -3,13 +3,13 @@ services:
 
 env:
   global:
-    - DOCKER_REPO="oanhnn/golang"
+    - DOCKER_REPO="oanhnn/go-workbench"
   matrix:
     - GO_VERSION="1.11"
 
 before_script:
   - docker info
-  - export IMAGE_NAME="oanhnn/golang:${GO_VERSION}-dev"
+  - export IMAGE_NAME="oanhnn/go-workbench:${GO_VERSION}"
 
 script:
   - ./hooks/build

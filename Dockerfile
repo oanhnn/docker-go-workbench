@@ -1,33 +1,11 @@
-ARG GO_VERSION=1.11
-
-FROM golang:${GO_VERSION}-alpine
-
-ENV PROTOBUF_TAG=v3.6.1
+FROM alpine:edge
 
 RUN apk add --update --no-cache \
-    autoconf \
-    automake \
-    build-base \
     curl \
-    gcc \
     git \
-    libtool \
-    libstdc++ \
-    make \
+    go \
     musl-dev \
-    zlib-dev
-
-RUN git clone  -b $PROTOBUF_TAG --depth 1 https://github.com/protocolbuffers/protobuf.git /tmp/protobuf \
- && cd /tmp/protobuf \
- && git submodule update --init --recursive \
- && ./autogen.sh \
- && ./configure --prefix=/usr \
- && make -j 3 \
- && make check \
- && make install \
- && ldconfig \
- && cd / \
- && rm -rf /tmp/protobuf
+    protobuf
 
 RUN go get -u -v github.com/golang/protobuf/proto \
  && go get -u -v github.com/golang/protobuf/protoc-gen-go \
