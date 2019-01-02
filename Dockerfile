@@ -23,11 +23,22 @@ RUN apk add --update --no-cache \
     unzip
 
 RUN curl -sSL -o /tmp/protobuf.zip https://github.com/protocolbuffers/protobuf/releases/download/v3.6.1/protobuf-cpp-3.6.1.zip \
- && unzip /tmp/protobuf.zip -d /tmp/ \
- && cd /tmp/protobuf-3.6.1
+ && unzip /tmp/protobuf.zip -d /tmp/
 
-RUN ./configure --prefix=/usr
-RUN make
-RUN make check
-RUN make install
-RUN ldconfig
+RUN cd /tmp/protobuf-3.6.1 \
+ && ./configure --prefix=/usr
+
+RUN cd /tmp/protobuf-3.6.1 \
+ && make
+
+RUN cd /tmp/protobuf-3.6.1 \
+ && make check
+
+RUN cd /tmp/protobuf-3.6.1 \
+ && make install
+
+RUN cd /tmp/protobuf-3.6.1 \
+ && ldconfig
+
+RUN cd /go \
+ && rm /tmp/protobuf-3.6.1
