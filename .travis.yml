@@ -4,13 +4,15 @@ services:
 env:
   global:
     - DOCKER_REPO="oanhnn/go-workbench"
-  matrix:
-    - GO_VERSION="1.11"
 
 before_script:
   - docker info
+  - if [[ ${TRAVIS_BRANCH} == "master" ]]; then
+      export IMAGE_TAG="latest";
+    else
+      export IMAGE_TAG=${TRAVIS_BRANCH};
+    fi
+  - export IMAGE_NAME="oanhnn/go-workbench:${IMAGE_TAG}"
 
 script:
-  - export IMAGE_NAME="oanhnn/go-workbench:${GO_VERSION}"
-  - cd $GO_VERSION
   - ./hooks/build
