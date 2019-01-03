@@ -2,10 +2,10 @@
 
 [![Software License](https://img.shields.io/github/license/oanhnn/docker-go-workbench.svg)](LICENSE)
 [![Build Status](https://img.shields.io/travis/oanhnn/docker-go-workbench/master.svg)](https://travis-ci.org/oanhnn/docker-go-workbench)
-[![Docker Build Method](https://img.shields.io/docker/automated/oanhnn/go-workbench.svg)]()
-[![Docker Build Status](https://img.shields.io/docker/build/oanhnn/go-workbench.svg)]()
-![](/docker/pulls/oanhnn/go-workbench.svg)
-![](/docker/stars/oanhnn/go-workbench.svg)
+[![Docker Build Method](https://img.shields.io/docker/automated/oanhnn/go-workbench.svg)](https://hub.docker.com/r/oanhnn/go-workbench)
+[![Docker Build Status](https://img.shields.io/docker/build/oanhnn/go-workbench.svg)](https://hub.docker.com/r/oanhnn/go-workbench)
+[![Docker Pull Counter](https://img.shields.io/docker/pulls/oanhnn/go-workbench.svg)](https://hub.docker.com/r/oanhnn/go-workbench)
+[![Docker Star Counter](https://img.shields.io/docker/stars/oanhnn/go-workbench.svg)](https://hub.docker.com/r/oanhnn/go-workbench)
 
 Repository of `oanhnn/go-workbench` Docker image.
 
@@ -13,12 +13,12 @@ Repository of `oanhnn/go-workbench` Docker image.
 
 Image Tag    | Base Image           | Badges
 -------------|----------------------|-------
-`1.11-dev`   | `alpine:edge`        | [![Docker Image Size](/microbadger/image-size/oanhnn/go-workbench/1.11-dev.svg)](https://microbadger.com/images/oanhnn/go-workbench:1.11-dev) [![Docker Image Layers](/microbadger/layers/oanhnn/go-workbench/1.11-dev.svg)](https://microbadger.com/images/oanhnn/go-workbench:1.11-dev)
+`1.11`       | `golang:1.11-alpine` | [![Docker Image Size](/microbadger/image-size/oanhnn/go-workbench/1.11.svg)](https://microbadger.com/images/oanhnn/go-workbench:1.11) [![Docker Image Layers](/microbadger/layers/oanhnn/go-workbench/1.11.svg)](https://microbadger.com/images/oanhnn/go-workbench:1.11)
 
 ## Features
 
-- [x] Base from `alpine` image
-- [x] Install `golang` by `apk`
+- [x] Base from `golang:1.11-alpine` image
+- [x] Install `kitgen` command for generating service with `go-kit`
 - [x] Install `protobuf`
 
 ## Requirement
@@ -27,7 +27,7 @@ Image Tag    | Base Image           | Badges
 ## Usage
 
 ```bash
-$ docker run --rm -it -v $(pwd):/app oanhnn/go-workbench:x.xx-dev sh
+$ docker run --rm -it -v $(pwd):/app oanhnn/go-workbench:x.xx sh
 ```
 
 No, you can build your source code
