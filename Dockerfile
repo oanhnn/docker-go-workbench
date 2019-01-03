@@ -25,7 +25,6 @@ RUN curl -sSL -o /tmp/protobuf.zip https://github.com/protocolbuffers/protobuf/r
  && cd /tmp/protobuf-3.6.1 \
  && ./configure --prefix=/usr \
  && make \
- && make check \
  && make install \
  && cd /go \
- && rm /tmp/protobuf-3.6.1
+ && rm -rf /tmp/protobuf*
