@@ -15,7 +15,7 @@ Repository of `oanhnn/go-workbench` Docker image.
 
 Image Tag    | Base Image           | Badges
 -------------|----------------------|-------
-`1.11`       | `golang:1.11-alpine` | [![Docker Image Size](/microbadger/image-size/oanhnn/go-workbench/1.11.svg)](https://microbadger.com/images/oanhnn/go-workbench:1.11) [![Docker Image Layers](/microbadger/layers/oanhnn/go-workbench/1.11.svg)](https://microbadger.com/images/oanhnn/go-workbench:1.11)
+`1.11`       | `golang:1.11-alpine` | [![Docker Image Size](https://img.shields.io/microbadger/image-size/oanhnn/go-workbench/1.11.svg)](https://microbadger.com/images/oanhnn/go-workbench:1.11) [![Docker Image Layers](https://img.shields.io/microbadger/layers/oanhnn/go-workbench/1.11.svg)](https://microbadger.com/images/oanhnn/go-workbench:1.11)
 
 ### Shared tags
 
