@@ -9,7 +9,8 @@ env:
 
 before_script:
   - docker info
-  - export IMAGE_NAME="oanhnn/go-workbench:${GO_VERSION}"
 
 script:
+  - export IMAGE_NAME="oanhnn/go-workbench:${GO_VERSION}"
+  - cd $GO_VERSION
   - ./hooks/build

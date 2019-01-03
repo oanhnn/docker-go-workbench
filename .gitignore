@@ -8,6 +8,7 @@ database/laravel-echo-server.sqlite
 #################################
 /nbproject
 /.idea
+/.vscode
 
 # OS generated files #
 ######################
