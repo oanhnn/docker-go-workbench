@@ -12,7 +12,7 @@ before_script:
     else
       export IMAGE_TAG=${TRAVIS_BRANCH};
     fi
-  - export IMAGE_NAME="oanhnn/go-workbench:${IMAGE_TAG}"
+  - export IMAGE_NAME="${DOCKER_REPO}:${IMAGE_TAG}"
 
 script:
   - ./hooks/build

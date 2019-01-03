@@ -36,7 +36,7 @@ Image Tag    | Base Image           | Badges
 $ docker run --rm -it -v $(pwd):/app oanhnn/go-workbench:x.xx sh
 ```
 
-No, you can build your source code
+Now, you can build your source code
 
 ## Contributing
 
